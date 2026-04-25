@@ -1,0 +1,118 @@
+[
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\drawable_grad_expense.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\drawable\\grad_expense.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_add_income.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_add_income.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_transaction_history.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_transaction_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_add_saving_goal.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_add_saving_goal.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_item_saving_goal.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\item_saving_goal.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\drawable_ic_calendar.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\drawable\\ic_calendar.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_income_list.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_income_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_reports.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_reports.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\drawable_progress_bar_custom.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\drawable\\progress_bar_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\drawable_grad_income.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\drawable\\grad_income.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_dialog_category.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\dialog_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_item_transaction.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\item_transaction.xml"
+    },
+    {
+        "merged": "com.example.smartexpensetracker.app-merged_res-29:/layout_activity_main.xml.flat",
+        "source": "com.example.smartexpensetracker.app-main-31:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_saving_goals.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_saving_goals.xml"
+    },
+    {
+        "merged": "com.example.smartexpensetracker.app-merged_res-29:/layout_activity_settings.xml.flat",
+        "source": "com.example.smartexpensetracker.app-main-31:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_item_category.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\item_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_item_income.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\item_income.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_add_expense.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_add_expense.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\drawable_gradient_premium_dynamic.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\drawable\\gradient_premium_dynamic.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\drawable_gradient_premium.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\drawable\\gradient_premium.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_categories.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_categories.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\menu\\bottom_nav_menu.xml"
+    }
+]

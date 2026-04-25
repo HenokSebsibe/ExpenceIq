@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/bg_color">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spending Reports"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Simple Chart Representation using Progress Bars -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expense vs Income"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvIncomeReport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income: $0.00"/>
+            <ProgressBar
+                android:id="@+id/pbIncome"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progressDrawable="@android:drawable/progress_horizontal"
+                android:progressTint="@color/income_green"
+                android:max="100"
+                android:progress="0"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvExpenseReport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expense: $0.00"/>
+            <ProgressBar
+                android:id="@+id/pbExpense"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progressDrawable="@android:drawable/progress_horizontal"
+                android:progressTint="@color/expense_red"
+                android:max="100"
+                android:progress="0"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnExportReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Export to Text File"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

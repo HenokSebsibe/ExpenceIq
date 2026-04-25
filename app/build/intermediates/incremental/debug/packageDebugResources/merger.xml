@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3" xmlns:ns1="http://schemas.android.com/tools"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res"><file name="ic_launcher_foreground" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\drawable\ic_launcher_foreground.xml" qualifiers="" type="drawable"/><file name="activity_add_expense" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\activity_add_expense.xml" qualifiers="" type="layout"/><file name="activity_add_income" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\activity_add_income.xml" qualifiers="" type="layout"/><file name="activity_categories" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\activity_categories.xml" qualifiers="" type="layout"/><file name="activity_main" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\activity_main.xml" qualifiers="" type="layout"/><file name="activity_reports" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\activity_reports.xml" qualifiers="" type="layout"/><file name="activity_settings" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\activity_settings.xml" qualifiers="" type="layout"/><file name="activity_transaction_history" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\activity_transaction_history.xml" qualifiers="" type="layout"/><file name="item_category" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\item_category.xml" qualifiers="" type="layout"/><file name="item_transaction" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\item_transaction.xml" qualifiers="" type="layout"/><file name="ic_launcher" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml" qualifiers="anydpi-v26" type="mipmap"/><file path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\values\colors.xml" qualifiers=""><color name="black">#FF000000</color><color name="white">#FFFFFFFF</color><color name="income_green">#2ECC71</color><color name="expense_red">#E74C3C</color><color name="text_primary_light">#1A1A1A</color><color name="text_secondary_light">#757575</color><color name="bg_light_premium">@color/luxury_light_bg</color><color name="card_light">@color/luxury_card</color><color name="primary_dark_variant">#000000</color><color name="card_dark_premium">@color/night_card</color><color name="text_secondary_dark">@color/night_text_secondary</color><color name="primary_dark_light">#001A4D</color><color name="accent_light">@color/royal_gold</color><color name="bg_dark_premium">@color/night_bg_matte</color><color name="gold">@color/night_gold</color><color name="text_primary_dark">@color/night_text_primary</color><color name="primary_light">@color/royal_blue</color><color name="bg_light">@color/luxury_light_bg</color><color name="deep_blue">@color/royal_blue</color><color name="bg_color">@color/luxury_light_bg</color><color name="royal_gold">#D4AF37</color><color name="gold_accent">@color/night_gold</color><color name="luxury_light_bg">#F5F5F5</color><color name="royal_blue">#002366</color><color name="luxury_gold">@color/night_gold</color><color name="luxury_emerald">@color/income_green</color><color name="income_grad_end">#55E6C1</color><color name="luxury_text_secondary">@color/text_secondary_light</color><color name="luxury_matte_black">@color/night_bg_matte</color><color name="expense_grad_end">#FF7675</color><color name="luxury_pearl">@color/luxury_light_bg</color><color name="expense_grad_start">#E74C3C</color><color name="luxury_text_primary">@color/text_primary_light</color><color name="income_grad_start">#2ECC71</color><color name="grad_start">@color/night_gold</color><color name="grad_end">#F1E5AC</color><color name="night_gold">#D4AF37</color><color name="night_card">#1E1E1E</color><color name="night_platinum">#B0B0B0</color><color name="luxury_card">#FFFFFF</color><color name="night_bg_matte">#0D0D0D</color><color name="night_text_primary">#FFFFFF</color><color name="night_bg_secondary">#161616</color><color name="night_error">#CF6679</color><color name="night_card_elevated">#252525</color><color name="night_text_hint">#8A8A8A</color><color name="night_text_secondary">#D0D0D0</color><color name="colorPrimaryDark">#001A4D</color><color name="colorPrimary">@color/royal_blue</color><color name="colorAccent">@color/royal_gold</color></file><file path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\values\ic_launcher_background.xml" qualifiers=""><color name="ic_launcher_background">#FFFFFF</color></file><file path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">Smart Expense Tracker</string></file><file path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\values\themes.xml" qualifiers=""><style name="Theme.SmartExpenseTracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/royal_blue</item>
+        <item name="colorPrimaryVariant">@color/primary_dark_light</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/royal_gold</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
+
+        
+        <item name="android:windowBackground">@color/luxury_light_bg</item>
+        <item name="colorSurface">@color/white</item>
+
+        
+        <item name="android:textColorPrimary">@color/text_primary_light</item>
+        <item name="android:textColorSecondary">@color/text_secondary_light</item>
+
+        
+        <item name="cardViewStyle">@style/PremiumCardView</item>
+        <item name="textInputStyle">@style/PremiumTextInputLayout</item>
+        <item name="materialButtonStyle">@style/PremiumButton</item>
+        <item name="bottomNavigationStyle">@style/PremiumBottomNav</item>
+    </style><style name="PremiumCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style><style name="PremiumButton" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">14dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/royal_blue</item>
+    </style><style name="PremiumTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/royal_blue</item>
+        <item name="hintTextColor">@color/royal_blue</item>
+    </style><style name="PremiumBottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="backgroundTint">@color/white</item>
+        <item name="itemIconTint">@color/royal_blue</item>
+        <item name="itemTextColor">@color/text_secondary_light</item>
+    </style></file><file name="backup_rules" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\xml\backup_rules.xml" qualifiers="" type="xml"/><file name="data_extraction_rules" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\xml\data_extraction_rules.xml" qualifiers="" type="xml"/><file name="grad_expense" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\drawable\grad_expense.xml" qualifiers="" type="drawable"/><file name="grad_income" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\drawable\grad_income.xml" qualifiers="" type="drawable"/><file name="gradient_premium" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\drawable\gradient_premium.xml" qualifiers="" type="drawable"/><file name="gradient_premium_dynamic" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\drawable\gradient_premium_dynamic.xml" qualifiers="" type="drawable"/><file name="activity_splash" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\activity_splash.xml" qualifiers="" type="layout"/><file name="dialog_category" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\dialog_category.xml" qualifiers="" type="layout"/><file name="progress_bar_custom" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\drawable\progress_bar_custom.xml" qualifiers="" type="drawable"/><file name="activity_add_saving_goal" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\activity_add_saving_goal.xml" qualifiers="" type="layout"/><file name="activity_saving_goals" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\activity_saving_goals.xml" qualifiers="" type="layout"/><file name="item_saving_goal" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\item_saving_goal.xml" qualifiers="" type="layout"/><file path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\values-night\themes.xml" qualifiers="night-v8"><style name="Theme.SmartExpenseTracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/night_gold</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        
+        <item name="colorSecondary">@color/night_gold</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        
+        <item name="android:statusBarColor">@color/night_bg_matte</item>
+        <item name="android:navigationBarColor">@color/night_bg_matte</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        
+        <item name="android:windowBackground">@color/night_bg_matte</item>
+        <item name="colorSurface">@color/night_card</item>
+        <item name="colorError">@color/night_error</item>
+
+        
+        <item name="android:textColorPrimary">@color/night_text_primary</item>
+        <item name="android:textColorSecondary">@color/night_text_secondary</item>
+        <item name="android:textColorHint">@color/night_text_hint</item>
+
+        
+        <item name="cardViewStyle">@style/PremiumCardView.Dark</item>
+        <item name="textInputStyle">@style/PremiumTextInputLayout.Dark</item>
+        <item name="materialButtonStyle">@style/PremiumButton.Dark</item>
+        <item name="bottomNavigationStyle">@style/PremiumBottomNav.Dark</item>
+    </style><style name="PremiumCardView.Dark" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="cardBackgroundColor">@color/night_card</item>
+        <item name="strokeColor">#1AFFFFFF</item>
+        <item name="strokeWidth">1dp</item>
+    </style><style name="PremiumButton.Dark" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">14dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/night_gold</item>
+        <item name="android:textColor">@color/black</item>
+    </style><style name="PremiumTextInputLayout.Dark" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/night_gold</item>
+        <item name="hintTextColor">@color/night_gold</item>
+        <item name="boxBackgroundColor">@color/night_bg_secondary</item>
+        <item name="android:textColorHint">@color/night_text_hint</item>
+    </style><style name="PremiumBottomNav.Dark" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="backgroundTint">@color/night_bg_matte</item>
+        <item name="itemIconTint">@color/night_gold</item>
+        <item name="itemTextColor">@color/night_text_secondary</item>
+    </style></file><file name="ic_calendar" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\drawable\ic_calendar.xml" qualifiers="" type="drawable"/><file name="activity_income_list" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\activity_income_list.xml" qualifiers="" type="layout"/><file name="item_income" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\layout\item_income.xml" qualifiers="" type="layout"/><file name="bottom_nav_menu" path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\res\menu\bottom_nav_menu.xml" qualifiers="" type="menu"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\build\generated\res\resValues\debug"/></dataSet><mergedItems/></merger>
