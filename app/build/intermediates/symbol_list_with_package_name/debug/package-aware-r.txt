@@ -1360,6 +1360,7 @@ color colorAccent
 color colorPrimary
 color colorPrimaryDark
 color deep_blue
+color deep_water
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1409,6 +1410,9 @@ color expense_grad_start
 color expense_red
 color foreground_material_dark
 color foreground_material_light
+color glass_bg
+color glass_bg_heavy
+color glass_border
 color gold
 color gold_accent
 color grad_end
@@ -1419,14 +1423,11 @@ color ic_launcher_background
 color income_grad_end
 color income_grad_start
 color income_green
-color luxury_card
 color luxury_emerald
 color luxury_gold
 color luxury_light_bg
 color luxury_matte_black
 color luxury_pearl
-color luxury_text_primary
-color luxury_text_secondary
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -2053,7 +2054,6 @@ color mtrl_textinput_hovered_box_stroke_color
 color night_bg_matte
 color night_bg_secondary
 color night_card
-color night_card_elevated
 color night_error
 color night_gold
 color night_platinum
@@ -2081,6 +2081,8 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color sky_blue_end
+color sky_blue_start
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -2093,6 +2095,8 @@ color text_secondary_dark
 color text_secondary_light
 color tooltip_background_dark
 color tooltip_background_light
+color transparent
+color water_blue
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -2963,6 +2967,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable glass_card_bg
 drawable grad_expense
 drawable grad_income
 drawable gradient_premium
@@ -2992,6 +2997,7 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
+drawable main_bg_gradient
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -3155,6 +3161,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnAddContribution
 id btnAddIncomeHeader
 id btnDeleteCategory
 id btnDeleteIncome
@@ -3171,6 +3178,7 @@ id callMeasure
 id cancel_button
 id cardAddExpense
 id cardAddIncome
+id cardChart
 id cardReports
 id cardTransactions
 id carryVelocity
@@ -3249,11 +3257,13 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id etAddAmount
 id etAmount
 id etCategoryName
 id etDate
 id etDeadline
 id etGoalName
+id etGoalNote
 id etIncomeAmount
 id etIncomeDate
 id etIncomeNote
@@ -3313,6 +3323,7 @@ id italic
 id item_touch_helper_previous_elevation
 id ivCategoryIcon
 id ivNotification
+id ivNotificationIcon
 id ivSplashLogo
 id ivTransactionIcon
 id jumpToEnd
@@ -3430,6 +3441,7 @@ id pbGoalProgress
 id pbIncome
 id peekHeight
 id percent
+id pieChartGoals
 id pin
 id pooling_container_listener_holder_tag
 id position
@@ -3449,6 +3461,7 @@ id rounded
 id row_index_key
 id rvCategories
 id rvIncome
+id rvNotifications
 id rvSavingGoals
 id rvTransactions
 id save_non_transition_alpha
@@ -3577,10 +3590,12 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvAddGoalTitle
 id tvAddIncomeTitle
 id tvAppName
 id tvCategoryName
 id tvDeadline
+id tvDialogDescription
 id tvExpenseReport
 id tvGoalAmount
 id tvGoalName
@@ -3590,6 +3605,11 @@ id tvIncomeAmount
 id tvIncomeDate
 id tvIncomeReport
 id tvIncomeSource
+id tvNoData
+id tvNoNotifications
+id tvNotificationDate
+id tvNotificationMessage
+id tvNotificationTitle
 id tvProgressPercent
 id tvSavingsTotal
 id tvTotalBalance
@@ -3740,6 +3760,7 @@ layout activity_add_saving_goal
 layout activity_categories
 layout activity_income_list
 layout activity_main
+layout activity_notifications
 layout activity_reports
 layout activity_saving_goals
 layout activity_settings
@@ -3762,8 +3783,10 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_category
+layout dialog_update_savings
 layout item_category
 layout item_income
+layout item_notification
 layout item_saving_goal
 layout item_transaction
 layout m3_alert_dialog

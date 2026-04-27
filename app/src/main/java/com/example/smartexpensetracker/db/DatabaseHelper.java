@@ -6,11 +6,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "SmartExpenseTracker.db";
-    private static final int DATABASE_VERSION = 5; // Incremented for Income table fix
+    private static final int DATABASE_VERSION = 7; // Incremented to 7 for Notifications table
 
     // Table Names
     public static final String TABLE_USERS = "users";
@@ -22,6 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_SETTINGS = "settings";
     public static final String TABLE_SAVING_GOALS = "saving_goals";
     public static final String TABLE_ASSETS = "assets";
+    public static final String TABLE_NOTIFICATIONS = "notifications";
 
     // Common Column Names
     public static final String COLUMN_ID = "_id";
@@ -67,6 +71,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Assets Table Columns
     public static final String COLUMN_ASSET_NAME = "asset_name";
     public static final String COLUMN_ASSET_VALUE = "asset_value";
+
+    // Notifications Table Columns
+    public static final String COLUMN_NOTIF_TYPE = "type"; // success, warning, info
+    public static final String COLUMN_NOTIF_MESSAGE = "message";
+    public static final String COLUMN_NOTIF_IS_READ = "isRead";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -121,10 +130,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE " + TABLE_SAVING_GOALS + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + COLUMN_GOAL_NAME + " TEXT,"
-                + COLUMN_TARGET_AMOUNT + " REAL,"
-                + COLUMN_SAVED_AMOUNT + " REAL,"
+                + COLUMN_GOAL_NAME + " TEXT NOT NULL,"
+                + COLUMN_TARGET_AMOUNT + " REAL NOT NULL,"
+                + COLUMN_SAVED_AMOUNT + " REAL NOT NULL,"
                 + COLUMN_DEADLINE + " TEXT,"
+                + COLUMN_NOTE + " TEXT,"
                 + COLUMN_STATUS + " INTEGER DEFAULT 0" + ")");
 
         db.execSQL("CREATE TABLE " + TABLE_ASSETS + "("
@@ -132,6 +142,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + COLUMN_ASSET_NAME + " TEXT,"
                 + COLUMN_ASSET_VALUE + " REAL,"
                 + COLUMN_DATE + " TEXT" + ")");
+
+        db.execSQL("CREATE TABLE " + TABLE_NOTIFICATIONS + "("
+                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + COLUMN_NOTIF_TYPE + " TEXT,"
+                + COLUMN_NOTIF_MESSAGE + " TEXT,"
+                + COLUMN_DATE + " TEXT,"
+                + COLUMN_NOTIF_IS_READ + " INTEGER DEFAULT 0" + ")");
 
         insertInitialCategories(db);
     }
@@ -154,13 +171,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     + COLUMN_ASSET_VALUE + " REAL,"
                     + COLUMN_DATE + " TEXT" + ")");
         }
-        if (oldVersion < 5) {
-            // Check if note column exists in income table, if not add it
-            try {
-                db.execSQL("ALTER TABLE " + TABLE_INCOME + " ADD COLUMN " + COLUMN_NOTE + " TEXT");
-            } catch (Exception e) {
-                Log.e("DatabaseHelper", "Error adding note column to income: " + e.getMessage());
+        if (oldVersion < 6) {
+            addColumnIfNotExists(db, TABLE_INCOME, COLUMN_NOTE, "TEXT");
+            addColumnIfNotExists(db, TABLE_SAVING_GOALS, COLUMN_NOTE, "TEXT");
+            addColumnIfNotExists(db, TABLE_SAVING_GOALS, COLUMN_STATUS, "INTEGER DEFAULT 0");
+        }
+        if (oldVersion < 7) {
+            db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NOTIFICATIONS + "("
+                    + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + COLUMN_NOTIF_TYPE + " TEXT,"
+                    + COLUMN_NOTIF_MESSAGE + " TEXT,"
+                    + COLUMN_DATE + " TEXT,"
+                    + COLUMN_NOTIF_IS_READ + " INTEGER DEFAULT 0" + ")");
+        }
+    }
+
+    private void addColumnIfNotExists(SQLiteDatabase db, String tableName, String columnName, String columnType) {
+        try {
+            Cursor cursor = db.rawQuery("PRAGMA table_info(" + tableName + ")", null);
+            boolean columnExists = false;
+            if (cursor.moveToFirst()) {
+                do {
+                    String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
+                    if (name.equalsIgnoreCase(columnName)) {
+                        columnExists = true;
+                        break;
+                    }
+                } while (cursor.moveToNext());
             }
+            cursor.close();
+
+            if (!columnExists) {
+                db.execSQL("ALTER TABLE " + tableName + " ADD COLUMN " + columnName + " " + columnType);
+                Log.d("DatabaseHelper", "Added column " + columnName + " to " + tableName);
+            }
+        } catch (Exception e) {
+            Log.e("DatabaseHelper", "Error checking/adding column: " + e.getMessage());
         }
     }
 
@@ -200,8 +246,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long id = db.insert(TABLE_INCOME, null, values);
         if (id != -1) {
             addTransaction("income", id, amount, date);
-        } else {
-            Log.e("DatabaseHelper", "Failed to insert income: source=" + source + ", amount=" + amount);
+            checkFinancialAlerts();
         }
         return id;
     }
@@ -216,6 +261,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         boolean updated = db.update(TABLE_INCOME, values, COLUMN_ID + " = ?", new String[]{String.valueOf(id)}) > 0;
         if (updated) {
             updateTransaction("income", id, amount, date);
+            checkFinancialAlerts();
         }
         return updated;
     }
@@ -225,6 +271,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         boolean deleted = db.delete(TABLE_INCOME, COLUMN_ID + " = ?", new String[]{String.valueOf(id)}) > 0;
         if (deleted) {
             db.delete(TABLE_TRANSACTIONS, COLUMN_TRANSACTION_TYPE + " = 'income' AND " + COLUMN_TRANSACTION_REF_ID + " = ?", new String[]{String.valueOf(id)});
+            checkFinancialAlerts();
         }
         return deleted;
     }
@@ -243,7 +290,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_NOTE, note);
         values.put(COLUMN_DATE, date);
         long id = db.insert(TABLE_EXPENSES, null, values);
-        addTransaction("expense", id, amount, date);
+        if (id != -1) {
+            addTransaction("expense", id, amount, date);
+            checkFinancialAlerts();
+        }
         return id;
     }
 
@@ -282,19 +332,128 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // --- Saving Goals Methods ---
-    public long addSavingGoal(String name, double target, double saved, String deadline) {
+    public long addSavingGoal(String name, double target, double saved, String deadline, String note) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_GOAL_NAME, name);
         values.put(COLUMN_TARGET_AMOUNT, target);
         values.put(COLUMN_SAVED_AMOUNT, saved);
         values.put(COLUMN_DEADLINE, deadline);
-        return db.insert(TABLE_SAVING_GOALS, null, values);
+        values.put(COLUMN_NOTE, note);
+        values.put(COLUMN_STATUS, (saved >= target) ? 1 : 0);
+        
+        long result = db.insert(TABLE_SAVING_GOALS, null, values);
+        if (result != -1) {
+            checkGoalProgress(name, target, saved);
+        }
+        return result;
+    }
+
+    public boolean updateSavingGoal(int id, String name, double target, double saved, String deadline, String note) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_GOAL_NAME, name);
+        values.put(COLUMN_TARGET_AMOUNT, target);
+        values.put(COLUMN_SAVED_AMOUNT, saved);
+        values.put(COLUMN_DEADLINE, deadline);
+        values.put(COLUMN_NOTE, note);
+        values.put(COLUMN_STATUS, (saved >= target) ? 1 : 0);
+        boolean updated = db.update(TABLE_SAVING_GOALS, values, COLUMN_ID + " = ?", new String[]{String.valueOf(id)}) > 0;
+        if (updated) {
+            checkGoalProgress(name, target, saved);
+        }
+        return updated;
+    }
+
+    public boolean deleteSavingGoal(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_SAVING_GOALS, COLUMN_ID + " = ?", new String[]{String.valueOf(id)}) > 0;
+    }
+
+    public boolean updateSavingGoalAmount(int id, double newSavedAmount) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        
+        Cursor cursor = db.rawQuery("SELECT " + COLUMN_GOAL_NAME + ", " + COLUMN_TARGET_AMOUNT + " FROM " + TABLE_SAVING_GOALS + " WHERE " + COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
+        double target = 0;
+        String name = "";
+        if (cursor.moveToFirst()) {
+            name = cursor.getString(0);
+            target = cursor.getDouble(1);
+        }
+        cursor.close();
+
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_SAVED_AMOUNT, newSavedAmount);
+        values.put(COLUMN_STATUS, (newSavedAmount >= target) ? 1 : 0);
+        boolean updated = db.update(TABLE_SAVING_GOALS, values, COLUMN_ID + " = ?", new String[]{String.valueOf(id)}) > 0;
+        if (updated) {
+            addNotification("success", "Contribution added successfully to " + name);
+            checkGoalProgress(name, target, newSavedAmount);
+        }
+        return updated;
     }
 
     public Cursor getAllSavingGoals() {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM " + TABLE_SAVING_GOALS, null);
+    }
+
+    // --- Notification Methods ---
+    public long addNotification(String type, String message) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NOTIF_TYPE, type);
+        values.put(COLUMN_NOTIF_MESSAGE, message);
+        values.put(COLUMN_DATE, new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(new Date()));
+        values.put(COLUMN_NOTIF_IS_READ, 0);
+        return db.insert(TABLE_NOTIFICATIONS, null, values);
+    }
+
+    public Cursor getAllNotifications() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + TABLE_NOTIFICATIONS + " ORDER BY " + COLUMN_ID + " DESC", null);
+    }
+
+    public boolean markNotificationAsRead(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NOTIF_IS_READ, 1);
+        return db.update(TABLE_NOTIFICATIONS, values, COLUMN_ID + " = ?", new String[]{String.valueOf(id)}) > 0;
+    }
+
+    public boolean deleteAllNotifications() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NOTIFICATIONS, null, null) > 0;
+    }
+
+    // --- Smart Triggers ---
+    private void checkFinancialAlerts() {
+        double income = getTotalIncome();
+        double expense = getTotalExpense();
+        double balance = income - expense;
+
+        if (balance < 0) {
+            addNotification("warning", "Warning: Your balance is negative ($" + String.format("%.2f", balance) + "). Reduce expenses.");
+        }
+
+        if (expense > income && income > 0) {
+            addNotification("warning", "Alert: Expenses ($" + String.format("%.2f", expense) + ") are higher than income ($" + String.format("%.2f", income) + ").");
+        }
+    }
+
+    private void checkGoalProgress(String name, double target, double saved) {
+        if (target <= 0) return;
+        double progress = (saved / target) * 100;
+
+        if (saved >= target) {
+            addNotification("success", "🎉 Congratulations! You completed your goal: " + name);
+        } else if (progress >= 75 && progress < 100) {
+            addNotification("info", "You reached 75% of your goal: " + name);
+        } else if (progress >= 50 && progress < 55) { // Range to avoid multiple notifications
+            addNotification("info", "You reached 50% of your goal: " + name);
+        } else if (progress >= 25 && progress < 30) {
+            addNotification("info", "You reached 25% of your goal: " + name);
+        }
     }
 
     // --- Summary Methods ---

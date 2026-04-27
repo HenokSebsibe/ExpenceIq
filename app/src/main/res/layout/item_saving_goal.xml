@@ -81,5 +81,17 @@
                 android:textColor="?android:attr/textColorSecondary"/>
         </LinearLayout>
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddContribution"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:text="Add Contribution"
+            android:textColor="?attr/colorPrimary"
+            app:icon="@android:drawable/ic_input_add"
+            app:iconTint="?attr/colorPrimary" />
+
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -2,8 +2,10 @@ package com.example.smartexpensetracker;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.smartexpensetracker.db.DatabaseHelper;
@@ -11,8 +13,10 @@ import java.util.Calendar;
 
 public class AddSavingGoalActivity extends AppCompatActivity {
 
-    private EditText etName, etTarget, etSaved, etDeadline;
+    private EditText etName, etTarget, etSaved, etDeadline, etNote;
     private DatabaseHelper dbHelper;
+    private int goalId = -1;
+    private boolean isEditMode = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +25,29 @@ public class AddSavingGoalActivity extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(this);
 
+        TextView tvTitle = findViewById(R.id.tvAddGoalTitle);
         etName = findViewById(R.id.etGoalName);
         etTarget = findViewById(R.id.etTargetAmount);
         etSaved = findViewById(R.id.etSavedAmount);
         etDeadline = findViewById(R.id.etDeadline);
+        etNote = findViewById(R.id.etGoalNote);
         Button btnSave = findViewById(R.id.btnSaveGoal);
 
-        etDeadline.setOnClickListener(v -> showDatePicker());
+        // Check for Edit Mode
+        if (getIntent().hasExtra("GOAL_ID")) {
+            isEditMode = true;
+            goalId = getIntent().getIntExtra("GOAL_ID", -1);
+            etName.setText(getIntent().getStringExtra("GOAL_NAME"));
+            etTarget.setText(String.valueOf(getIntent().getDoubleExtra("GOAL_TARGET", 0.0)));
+            etSaved.setText(String.valueOf(getIntent().getDoubleExtra("GOAL_SAVED", 0.0)));
+            etDeadline.setText(getIntent().getStringExtra("GOAL_DEADLINE"));
+            etNote.setText(getIntent().getStringExtra("GOAL_NOTE"));
+            
+            tvTitle.setText("Edit Saving Goal");
+            btnSave.setText("Update Goal");
+        }
 
+        etDeadline.setOnClickListener(v -> showDatePicker());
         btnSave.setOnClickListener(v -> saveGoal());
     }
 
@@ -47,25 +66,41 @@ public class AddSavingGoalActivity extends AppCompatActivity {
     }
 
     private void saveGoal() {
-        String name = etName.getText().toString();
-        String targetStr = etTarget.getText().toString();
-        String savedStr = etSaved.getText().toString();
-        String deadline = etDeadline.getText().toString();
+        try {
+            String name = etName.getText().toString().trim();
+            String targetStr = etTarget.getText().toString().trim();
+            String savedStr = etSaved.getText().toString().trim();
+            String deadline = etDeadline.getText().toString().trim();
+            String note = etNote.getText().toString().trim();
 
-        if (name.isEmpty() || targetStr.isEmpty() || deadline.isEmpty()) {
-            Toast.makeText(this, "Please fill required fields", Toast.LENGTH_SHORT).show();
-            return;
-        }
+            if (name.isEmpty() || targetStr.isEmpty() || deadline.isEmpty()) {
+                Toast.makeText(this, "Please fill required fields", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
-        double target = Double.parseDouble(targetStr);
-        double saved = savedStr.isEmpty() ? 0 : Double.parseDouble(savedStr);
+            double target = Double.parseDouble(targetStr);
+            double saved = savedStr.isEmpty() ? 0 : Double.parseDouble(savedStr);
 
-        long id = dbHelper.addSavingGoal(name, target, saved, deadline);
-        if (id != -1) {
-            Toast.makeText(this, "Saving goal created", Toast.LENGTH_SHORT).show();
-            finish();
-        } else {
-            Toast.makeText(this, "Error creating goal", Toast.LENGTH_SHORT).show();
+            boolean success;
+            if (isEditMode) {
+                success = dbHelper.updateSavingGoal(goalId, name, target, saved, deadline, note);
+            } else {
+                long result = dbHelper.addSavingGoal(name, target, saved, deadline, note);
+                success = (result != -1);
+                if (result == -1) {
+                    Log.e("GOAL_ERROR", "db.insert returned -1 for goals table");
+                }
+            }
+
+            if (success) {
+                Toast.makeText(this, "Goal created successfully", Toast.LENGTH_SHORT).show();
+                finish();
+            } else {
+                Toast.makeText(this, "Database Error: Could not save goal", Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Log.e("GOAL_ERROR", "Save failed", e);
+            Toast.makeText(this, "Parsing Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 }

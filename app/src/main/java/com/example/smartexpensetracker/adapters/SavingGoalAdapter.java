@@ -1,14 +1,17 @@
 package com.example.smartexpensetracker.adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.smartexpensetracker.R;
 import com.example.smartexpensetracker.models.SavingGoal;
+import com.google.android.material.button.MaterialButton;
 import java.util.List;
 import java.util.Locale;
 
@@ -19,6 +22,8 @@ public class SavingGoalAdapter extends RecyclerView.Adapter<SavingGoalAdapter.Vi
 
     public interface OnGoalClickListener {
         void onGoalClick(SavingGoal goal);
+        void onUpdateAmountClick(SavingGoal goal);
+        void onAddContributionClick(SavingGoal goal);
     }
 
     public SavingGoalAdapter(List<SavingGoal> goals, OnGoalClickListener listener) {
@@ -36,21 +41,38 @@ public class SavingGoalAdapter extends RecyclerView.Adapter<SavingGoalAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         SavingGoal goal = goals.get(position);
+        Context context = holder.itemView.getContext();
+        
         holder.tvName.setText(goal.getName());
         holder.tvAmount.setText(String.format(Locale.getDefault(), "$%.2f / $%.2f", goal.getSavedAmount(), goal.getTargetAmount()));
         holder.tvDeadline.setText("Due: " + goal.getDeadline());
-        holder.tvPercent.setText(goal.getProgress() + "%");
-        holder.pbProgress.setProgress(goal.getProgress());
         
-        if (goal.getStatus() == 1) {
-            holder.tvStatus.setText("Completed");
-            holder.tvStatus.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.income_green));
+        int progress = goal.getProgress();
+        holder.tvPercent.setText(progress + "%");
+        holder.pbProgress.setProgress(progress);
+        
+        // Progress based colors
+        if (progress >= 100) {
+            holder.tvStatus.setText("Completed!");
+            holder.tvStatus.setTextColor(ContextCompat.getColor(context, R.color.income_green));
+            holder.btnAddContribution.setVisibility(View.GONE);
+        } else if (progress >= 80) {
+            holder.tvStatus.setText("Almost there!");
+            holder.tvStatus.setTextColor(ContextCompat.getColor(context, R.color.royal_gold));
+            holder.btnAddContribution.setVisibility(View.VISIBLE);
         } else {
             holder.tvStatus.setText("Active");
-            holder.tvStatus.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.gold));
+            holder.tvStatus.setTextColor(ContextCompat.getColor(context, R.color.night_platinum));
+            holder.btnAddContribution.setVisibility(View.VISIBLE);
         }
 
         holder.itemView.setOnClickListener(v -> listener.onGoalClick(goal));
+        holder.itemView.setOnLongClickListener(v -> {
+            listener.onUpdateAmountClick(goal);
+            return true;
+        });
+
+        holder.btnAddContribution.setOnClickListener(v -> listener.onAddContributionClick(goal));
     }
 
     @Override
@@ -61,6 +83,7 @@ public class SavingGoalAdapter extends RecyclerView.Adapter<SavingGoalAdapter.Vi
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvName, tvAmount, tvDeadline, tvPercent, tvStatus;
         ProgressBar pbProgress;
+        MaterialButton btnAddContribution;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -70,6 +93,7 @@ public class SavingGoalAdapter extends RecyclerView.Adapter<SavingGoalAdapter.Vi
             tvPercent = itemView.findViewById(R.id.tvProgressPercent);
             tvStatus = itemView.findViewById(R.id.tvGoalStatus);
             pbProgress = itemView.findViewById(R.id.pbGoalProgress);
+            btnAddContribution = itemView.findViewById(R.id.btnAddContribution);
         }
     }
 }

@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/windowBackground">
+    android:background="@color/luxury_light_bg">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorSurface"
+        android:background="@android:color/transparent"
         app:elevation="0dp">
 
         <RelativeLayout
@@ -26,7 +26,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Welcome Back,"
-                    android:textColor="?android:attr/textColorSecondary"
+                    android:textColor="@color/text_secondary_light"
                     android:textSize="14sp"
                     android:letterSpacing="0.05"/>
 
@@ -34,7 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Executive User"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/text_primary_light"
                     android:textSize="22sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -46,7 +46,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:src="@android:drawable/ic_popup_reminder"
-                app:tint="?attr/colorPrimary"/>
+                app:tint="@color/royal_blue"/>
         </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -74,8 +74,9 @@
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    style="?attr/cardViewStyle"
-                    app:cardBackgroundColor="?attr/colorPrimary">
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/royal_blue">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -85,16 +86,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Total Balance"
-                            android:textColor="?attr/colorOnPrimary"
+                            android:textColor="#CCFFFFFF"
                             android:textSize="12sp"
-                            android:textAllCaps="true"
-                            android:alpha="0.8"/>
+                            android:textAllCaps="true"/>
                         <TextView
                             android:id="@+id/tvTotalBalance"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$0.00"
-                            android:textColor="?attr/colorOnPrimary"
+                            android:textColor="@color/white"
                             android:textSize="22sp"
                             android:textStyle="bold"
                             android:layout_marginTop="4dp"/>
@@ -107,7 +107,9 @@
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    style="?attr/cardViewStyle">
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/white">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -125,7 +127,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$0.00"
-                            android:textColor="?android:attr/textColorPrimary"
+                            android:textColor="@color/text_primary_light"
                             android:textSize="22sp"
                             android:textStyle="bold"
                             android:layout_marginTop="4dp"/>
@@ -138,7 +140,9 @@
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    style="?attr/cardViewStyle">
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/white">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -156,7 +160,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$0.00"
-                            android:textColor="?android:attr/textColorPrimary"
+                            android:textColor="@color/text_primary_light"
                             android:textSize="22sp"
                             android:textStyle="bold"
                             android:layout_marginTop="4dp"/>
@@ -169,7 +173,9 @@
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    style="?attr/cardViewStyle">
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/white">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -179,7 +185,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Savings"
-                            android:textColor="?attr/colorPrimary"
+                            android:textColor="@color/royal_gold"
                             android:textSize="12sp"
                             android:textAllCaps="true"/>
                         <TextView
@@ -187,7 +193,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$0.00"
-                            android:textColor="?android:attr/textColorPrimary"
+                            android:textColor="@color/text_primary_light"
                             android:textSize="22sp"
                             android:textStyle="bold"
                             android:layout_marginTop="4dp"/>
@@ -202,7 +208,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
                 android:text="Quick Actions"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@color/text_primary_light"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -219,7 +225,8 @@
                     android:layout_height="100dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    style="?attr/cardViewStyle"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
                     android:clickable="true"
                     android:focusable="true">
                     <LinearLayout
@@ -239,7 +246,7 @@
                             android:textSize="12sp"
                             android:textStyle="bold"
                             android:layout_marginTop="8dp"
-                            android:textColor="?android:attr/textColorPrimary"/>
+                            android:textColor="@color/text_primary_light"/>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -250,7 +257,8 @@
                     android:layout_height="100dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    style="?attr/cardViewStyle"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
                     android:clickable="true"
                     android:focusable="true">
                     <LinearLayout
@@ -270,7 +278,7 @@
                             android:textSize="12sp"
                             android:textStyle="bold"
                             android:layout_marginTop="8dp"
-                            android:textColor="?android:attr/textColorPrimary"/>
+                            android:textColor="@color/text_primary_light"/>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -281,7 +289,8 @@
                     android:layout_height="100dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    style="?attr/cardViewStyle"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
                     android:clickable="true"
                     android:focusable="true">
                     <LinearLayout
@@ -293,7 +302,7 @@
                             android:layout_width="28dp"
                             android:layout_height="28dp"
                             android:src="@android:drawable/ic_menu_recent_history"
-                            app:tint="?attr/colorPrimary"/>
+                            app:tint="@color/royal_blue"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -301,7 +310,7 @@
                             android:textSize="12sp"
                             android:textStyle="bold"
                             android:layout_marginTop="8dp"
-                            android:textColor="?android:attr/textColorPrimary"/>
+                            android:textColor="@color/text_primary_light"/>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -312,7 +321,8 @@
                     android:layout_height="100dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    style="?attr/cardViewStyle"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
                     android:clickable="true"
                     android:focusable="true">
                     <LinearLayout
@@ -324,7 +334,7 @@
                             android:layout_width="28dp"
                             android:layout_height="28dp"
                             android:src="@android:drawable/ic_menu_compass"
-                            app:tint="?attr/colorPrimary"/>
+                            app:tint="@color/royal_blue"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -332,7 +342,7 @@
                             android:textSize="12sp"
                             android:textStyle="bold"
                             android:layout_marginTop="8dp"
-                            android:textColor="?android:attr/textColorPrimary"/>
+                            android:textColor="@color/text_primary_light"/>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -348,8 +358,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        style="?attr/bottomNavigationStyle"
+        android:background="@color/white"
         app:elevation="16dp"
-        app:menu="@menu/bottom_nav_menu"/>
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/royal_blue"
+        app:itemTextColor="@color/text_secondary_light"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

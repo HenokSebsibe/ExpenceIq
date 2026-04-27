@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bg_color">
+    android:background="?android:attr/windowBackground">
 
     <TextView
         android:layout_width="match_parent"
@@ -11,9 +11,9 @@
         android:text="Transaction History"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="?attr/colorPrimary"
         android:padding="20dp"
-        android:background="#FFFFFF"/>
+        android:background="?attr/colorSurface"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTransactions"

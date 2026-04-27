@@ -2,6 +2,7 @@ package com.example.smartexpensetracker;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -39,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
         cardAddIncome.setOnClickListener(v -> startActivity(new Intent(this, AddIncomeActivity.class)));
         cardTransactions.setOnClickListener(v -> startActivity(new Intent(this, TransactionHistoryActivity.class)));
         cardReports.setOnClickListener(v -> startActivity(new Intent(this, ReportsActivity.class)));
+
+        // Notification Bell - Re-implemented to open NotificationsActivity
+        ImageView ivNotification = findViewById(R.id.ivNotification);
+        if (ivNotification != null) {
+            ivNotification.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, NotificationsActivity.class)));
+        }
 
         // Bottom Navigation
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);

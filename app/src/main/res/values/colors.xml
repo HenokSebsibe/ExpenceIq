@@ -3,65 +3,71 @@
     <!-- Basic Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
 
-    <!-- Premium Night Mode Color System -->
+    <!-- Sky Blue Water Theme Palette -->
+    <color name="sky_blue_start">#E0F2F1</color>
+    <color name="sky_blue_end">#B3E5FC</color>
+    <color name="water_blue">#0288D1</color>
+    <color name="deep_water">#01579B</color>
+
+    <!-- Glassmorphism Colors -->
+    <color name="glass_bg">#4DFFFFFF</color>
+    <color name="glass_bg_heavy">#80FFFFFF</color>
+    <color name="glass_border">#33FFFFFF</color>
+
+    <!-- Night Mode Palette -->
     <color name="night_bg_matte">#0D0D0D</color>
-    <color name="night_bg_secondary">#161616</color>
-    <color name="night_card">#1E1E1E</color>
-    <color name="night_card_elevated">#252525</color>
-    <color name="night_gold">#D4AF37</color>
-    <color name="night_platinum">#B0B0B0</color>
-    <color name="night_text_primary">#FFFFFF</color>
-    <color name="night_text_secondary">#D0D0D0</color>
+    <color name="night_bg_secondary">#001021</color>
+    <color name="night_card">#1A2E35</color>
+    <color name="night_text_primary">#E1F5FE</color>
+    <color name="night_text_secondary">#B3E5FC</color>
     <color name="night_text_hint">#8A8A8A</color>
+    <color name="night_platinum">#B0B0B0</color>
     <color name="night_error">#CF6679</color>
-
-    <!-- Luxury Light Theme Palette -->
-    <color name="luxury_light_bg">#F5F5F5</color>
-    <color name="luxury_card">#FFFFFF</color>
-    <color name="royal_blue">#002366</color>
-    <color name="royal_gold">#D4AF37</color>
-    <color name="text_primary_light">#1A1A1A</color>
-    <color name="text_secondary_light">#757575</color>
+    <color name="night_gold">#FFD600</color>
 
     <!-- Functional Colors -->
-    <color name="income_green">#2ECC71</color>
-    <color name="expense_red">#E74C3C</color>
+    <color name="income_green">#00C853</color>
+    <color name="expense_red">#D50000</color>
+    <color name="royal_gold">#FFD600</color>
 
-    <!-- Essential App Colors (fixing linking errors) -->
-    <color name="colorPrimary">@color/royal_blue</color>
-    <color name="colorPrimaryDark">#001A4D</color>
-    <color name="colorAccent">@color/royal_gold</color>
+    <!-- Theme Attribute Compatibility -->
+    <color name="colorPrimary">#0288D1</color>
+    <color name="colorPrimaryDark">#01579B</color>
+    <color name="colorAccent">#FFD600</color>
 
-    <!-- Compatibility Aliases (to prevent build errors in layouts) -->
-    <color name="luxury_pearl">@color/luxury_light_bg</color>
-    <color name="luxury_gold">@color/night_gold</color>
-    <color name="luxury_text_primary">@color/text_primary_light</color>
-    <color name="luxury_text_secondary">@color/text_secondary_light</color>
-    <color name="luxury_emerald">@color/income_green</color>
-    <color name="luxury_matte_black">@color/night_bg_matte</color>
+    <!-- Compatibility Aliases -->
+    <color name="luxury_pearl">#F5F5F5</color>
+    <color name="luxury_gold">#FFD600</color>
+    <color name="text_primary_light">#01579B</color>
+    <color name="text_secondary_light">#0277BD</color>
+    <color name="luxury_emerald">#00C853</color>
+    <color name="luxury_matte_black">#0D0D0D</color>
 
-    <color name="gold">@color/night_gold</color>
-    <color name="gold_accent">@color/night_gold</color>
-    <color name="primary_light">@color/royal_blue</color>
-    <color name="primary_dark_light">#001A4D</color>
-    <color name="accent_light">@color/royal_gold</color>
-    <color name="bg_light_premium">@color/luxury_light_bg</color>
-    <color name="card_light">@color/luxury_card</color>
+    <color name="gold">#FFD600</color>
+    <color name="gold_accent">#FFD600</color>
+    <color name="royal_blue">#0288D1</color>
+    <color name="primary_light">#0288D1</color>
+    <color name="primary_dark_light">#01579B</color>
+    <color name="accent_light">#FFD600</color>
+    <color name="bg_light_premium">#E0F2F1</color>
+    <color name="luxury_light_bg">#F5F5F5</color>
+    <color name="card_light">#FFFFFF</color>
     <color name="primary_dark_variant">#000000</color>
-    <color name="bg_dark_premium">@color/night_bg_matte</color>
-    <color name="card_dark_premium">@color/night_card</color>
-    <color name="bg_color">@color/luxury_light_bg</color>
-    <color name="bg_light">@color/luxury_light_bg</color>
-    <color name="deep_blue">@color/royal_blue</color>
-    <color name="text_primary_dark">@color/night_text_primary</color>
-    <color name="text_secondary_dark">@color/night_text_secondary</color>
+    <color name="bg_dark_premium">#001021</color>
+    <color name="card_dark_premium">#1A2E35</color>
+    <color name="bg_color">#E0F2F1</color>
+    <color name="bg_light">#E0F2F1</color>
+    <color name="deep_blue">#01579B</color>
+    <color name="text_primary_dark">#E1F5FE</color>
+    <color name="text_secondary_dark">#B3E5FC</color>
 
     <!-- Gradient Compatibility -->
-    <color name="expense_grad_start">#E74C3C</color>
-    <color name="expense_grad_end">#FF7675</color>
-    <color name="income_grad_start">#2ECC71</color>
-    <color name="income_grad_end">#55E6C1</color>
-    <color name="grad_start">@color/night_gold</color>
-    <color name="grad_end">#F1E5AC</color>
+    <color name="expense_grad_start">#FF5252</color>
+    <color name="expense_grad_end">#D50000</color>
+    <color name="income_grad_start">#69F0AE</color>
+    <color name="income_grad_end">#00C853</color>
+    <color name="grad_start">#0288D1</color>
+    <color name="grad_end">#B3E5FC</color>
 </resources>
