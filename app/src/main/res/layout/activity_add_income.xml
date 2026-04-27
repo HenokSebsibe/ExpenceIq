@@ -6,6 +6,7 @@
     android:background="@color/bg_light_premium">
 
     <LinearLayout
+        android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"

@@ -34,7 +34,7 @@ public class NotificationsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("Financial Alerts");
+            getSupportActionBar().setTitle("Notifications");
         }
 
         dbHelper = new DatabaseHelper(this);
@@ -52,22 +52,24 @@ public class NotificationsActivity extends AppCompatActivity {
 
     private void loadNotifications() {
         notificationList.clear();
-        Cursor cursor = dbHelper.getAllNotifications();
-        if (cursor != null && cursor.moveToFirst()) {
-            do {
-                int id = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_ID));
-                String type = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_NOTIF_TYPE));
-                String message = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_NOTIF_MESSAGE));
-                String date = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_DATE));
-                int isRead = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_NOTIF_IS_READ));
-                
-                notificationList.add(new AppNotification(id, type, message, date, isRead));
-            } while (cursor.moveToNext());
-            cursor.close();
+        try (Cursor cursor = dbHelper.getAllNotifications()) {
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    int id = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_ID));
+                    String type = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_NOTIF_TYPE));
+                    String message = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_NOTIF_MESSAGE));
+                    String date = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_DATE));
+                    
+                    notificationList.add(new AppNotification(id, type, message, date));
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         if (notificationList.isEmpty()) {
             tvNoNotifications.setVisibility(View.VISIBLE);
+            tvNoNotifications.setText("No notifications available");
             rvNotifications.setVisibility(View.GONE);
         } else {
             tvNoNotifications.setVisibility(View.GONE);

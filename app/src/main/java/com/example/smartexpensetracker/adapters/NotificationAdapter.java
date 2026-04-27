@@ -31,38 +31,29 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         AppNotification notification = notifications.get(position);
         
-        String title = notification.getType().toUpperCase();
-        holder.tvTitle.setText(title);
+        holder.tvTitle.setText(notification.getType());
         holder.tvMessage.setText(notification.getMessage());
         holder.tvDate.setText(notification.getDate());
 
         int color;
         int iconRes;
-        switch (notification.getType().toLowerCase()) {
-            case "success":
-                color = ContextCompat.getColor(holder.itemView.getContext(), R.color.income_green);
-                iconRes = android.R.drawable.ic_dialog_info; // You can use a better icon if available
-                break;
-            case "warning":
-                color = ContextCompat.getColor(holder.itemView.getContext(), R.color.expense_red);
-                iconRes = android.R.drawable.stat_sys_warning;
-                break;
-            default:
-                color = ContextCompat.getColor(holder.itemView.getContext(), R.color.water_blue);
-                iconRes = android.R.drawable.ic_popup_reminder;
-                break;
+        String type = notification.getType().toLowerCase();
+        if (type.contains("income")) {
+            color = ContextCompat.getColor(holder.itemView.getContext(), R.color.income_green);
+            iconRes = android.R.drawable.ic_input_add;
+        } else if (type.contains("warning") || type.contains("expense")) {
+            color = ContextCompat.getColor(holder.itemView.getContext(), R.color.expense_red);
+            iconRes = android.R.drawable.stat_sys_warning;
+        } else if (type.contains("goal")) {
+            color = ContextCompat.getColor(holder.itemView.getContext(), R.color.water_blue);
+            iconRes = android.R.drawable.btn_star_big_on;
+        } else {
+            color = ContextCompat.getColor(holder.itemView.getContext(), R.color.text_secondary_light);
+            iconRes = android.R.drawable.ic_popup_reminder;
         }
         
         holder.ivIcon.setColorFilter(color);
         holder.ivIcon.setImageResource(iconRes);
-        
-        // Indicate if read/unread
-        if (notification.getIsRead() == 0) {
-            holder.itemView.setAlpha(1.0f);
-            holder.tvTitle.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.text_primary_light));
-        } else {
-            holder.itemView.setAlpha(0.6f);
-        }
     }
 
     @Override

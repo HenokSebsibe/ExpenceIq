@@ -46,6 +46,7 @@
         <activity android:name="com.example.smartexpensetracker.SettingsActivity" />
         <activity android:name="com.example.smartexpensetracker.SavingsGoalsActivity" />
         <activity android:name="com.example.smartexpensetracker.AddSavingGoalActivity" />
+        <activity android:name="com.example.smartexpensetracker.NotificationsActivity" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

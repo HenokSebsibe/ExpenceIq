@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:2:1-38:12
+ADDED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:2:1-39:12
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\hp\.gradle\caches\transforms-3\8a34df234dde28e808011cb39171291e\transformed\material-1.9.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\hp\.gradle\caches\transforms-3\395d71d697a2819f71d941e83c2d5fe8\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\hp\.gradle\caches\transforms-3\a6e5f6212cc01c97226962f50ee2288b\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -56,8 +56,8 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\hp\.gra
 	xmlns:android
 		ADDED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:5:5-36:19
-INJECTED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:5:5-36:19
+ADDED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:5:5-37:19
+INJECTED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:5:5-37:19
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\hp\.gradle\caches\transforms-3\8a34df234dde28e808011cb39171291e\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\hp\.gradle\caches\transforms-3\8a34df234dde28e808011cb39171291e\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\hp\.gradle\caches\transforms-3\395d71d697a2819f71d941e83c2d5fe8\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -146,6 +146,10 @@ activity#com.example.smartexpensetracker.AddSavingGoalActivity
 ADDED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:34:9-59
 	android:name
 		ADDED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:34:19-56
+activity#com.example.smartexpensetracker.NotificationsActivity
+ADDED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:35:9-59
+	android:name
+		ADDED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:35:19-56
 uses-sdk
 INJECTED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml

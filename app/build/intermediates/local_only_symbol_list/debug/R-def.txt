@@ -101,6 +101,7 @@ id ivNotification
 id ivNotificationIcon
 id ivSplashLogo
 id ivTransactionIcon
+id mainLayout
 id nav_goals
 id nav_home
 id nav_profile
@@ -167,6 +168,7 @@ layout item_income
 layout item_notification
 layout item_saving_goal
 layout item_transaction
+layout layout_goal_selection
 menu bottom_nav_menu
 mipmap ic_launcher
 string app_name

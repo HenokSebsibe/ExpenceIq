@@ -20,7 +20,7 @@
 15-->[androidx.core:core:1.9.0] C:\Users\hp\.gradle\caches\transforms-3\cf89ab1ea7cc19352d4f47103c74320d\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 16
 17    <application
-17-->C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:5:5-36:19
+17-->C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:5:5-37:19
 18        android:allowBackup="true"
 18-->C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:6:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -88,28 +88,31 @@
 48        <activity android:name="com.example.smartexpensetracker.AddSavingGoalActivity" />
 48-->C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:34:9-59
 48-->C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:34:19-56
-49
-50        <provider
-50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-51            android:name="androidx.startup.InitializationProvider"
-51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-52            android:authorities="com.example.smartexpensetracker.androidx-startup"
-52-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-53            android:exported="false" >
-53-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-54            <meta-data
-54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-55                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-56                android:value="androidx.startup" />
-56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-57            <meta-data
-57-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\hp\.gradle\caches\transforms-3\2f569bc5cc97ee66011fd77f4e8c57ec\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-58                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-58-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\hp\.gradle\caches\transforms-3\2f569bc5cc97ee66011fd77f4e8c57ec\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-59                android:value="androidx.startup" />
-59-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\hp\.gradle\caches\transforms-3\2f569bc5cc97ee66011fd77f4e8c57ec\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-60        </provider>
-61    </application>
-62
-63</manifest>
+49        <activity android:name="com.example.smartexpensetracker.NotificationsActivity" />
+49-->C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:35:9-59
+49-->C:\Users\hp\AndroidStudioProjects\ExpenceIq\app\src\main\AndroidManifest.xml:35:19-56
+50
+51        <provider
+51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+52            android:name="androidx.startup.InitializationProvider"
+52-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+53            android:authorities="com.example.smartexpensetracker.androidx-startup"
+53-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+54            android:exported="false" >
+54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+55            <meta-data
+55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+56                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+57                android:value="androidx.startup" />
+57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\hp\.gradle\caches\transforms-3\acd7b7be712c1ada299bcfc81b726076\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+58            <meta-data
+58-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\hp\.gradle\caches\transforms-3\2f569bc5cc97ee66011fd77f4e8c57ec\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+59                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+59-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\hp\.gradle\caches\transforms-3\2f569bc5cc97ee66011fd77f4e8c57ec\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+60                android:value="androidx.startup" />
+60-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\hp\.gradle\caches\transforms-3\2f569bc5cc97ee66011fd77f4e8c57ec\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+61        </provider>
+62    </application>
+63
+64</manifest>

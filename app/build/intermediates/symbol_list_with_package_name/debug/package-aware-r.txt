@@ -3339,6 +3339,7 @@ id linear
 id listMode
 id list_item
 id m3_side_sheet
+id mainLayout
 id marquee
 id masked
 id match_constraint
@@ -3789,6 +3790,7 @@ layout item_income
 layout item_notification
 layout item_saving_goal
 layout item_transaction
+layout layout_goal_selection
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

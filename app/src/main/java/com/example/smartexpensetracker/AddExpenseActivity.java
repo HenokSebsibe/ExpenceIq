@@ -86,7 +86,7 @@ public class AddExpenseActivity extends AppCompatActivity {
 
         long id = dbHelper.addExpense(categoryId, amount, note, date);
         if (id != -1) {
-            Toast.makeText(this, "Expense added successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Expense recorded successfully", Toast.LENGTH_SHORT).show();
             finish();
         } else {
             Toast.makeText(this, "Error adding expense", Toast.LENGTH_SHORT).show();

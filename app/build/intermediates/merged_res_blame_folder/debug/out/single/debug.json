@@ -8,12 +8,12 @@
         "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\activity_add_income.xml"
     },
     {
-        "merged": "com.example.smartexpensetracker.app-merged_res-29:/layout_item_notification.xml.flat",
-        "source": "com.example.smartexpensetracker.app-main-31:/layout/item_notification.xml"
-    },
-    {
         "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "com.example.smartexpensetracker.app-merged_res-29:/layout_layout_goal_selection.xml.flat",
+        "source": "com.example.smartexpensetracker.app-main-31:/layout/layout_goal_selection.xml"
     },
     {
         "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_transaction_history.xml.flat",
@@ -118,6 +118,10 @@
     {
         "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\drawable_gradient_premium.xml.flat",
         "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\drawable\\gradient_premium.xml"
+    },
+    {
+        "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_layout_goal_selection.xml.flat",
+        "source": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-main-31:\\layout\\layout_goal_selection.xml"
     },
     {
         "merged": "C:\\Users\\hp\\.gradle\\daemon\\8.5\\com.example.smartexpensetracker.app-merged_res-29:\\layout_activity_categories.xml.flat",
